@@ -1,4 +1,3 @@
-
 """mehr URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -17,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from importCsv import views
-from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('',views.index,name="main"),
-    path('admin/', admin.site.urls,name="admin"),
-    path('search/',views.search, name="search"),
-    path('import/',include('importCsv.urls')),
+    path('', views.index, name="main"),
+    # path('admin/?next=/', views.redirect_admin,name="redirect_admin"),
+    path('admin/', admin.site.urls),
+    path('search/', views.search, name="search"),
+    path('import/', include('importCsv.urls')),
     path('logout/', views.logoutUser, name='logout'),
+    path('login/', admin.site.urls, name="login"),
 ]

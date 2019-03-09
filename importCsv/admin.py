@@ -1,5 +1,5 @@
 from django.contrib import admin
-from importCsv.models import City,Hotel,Url
+from importCsv.models import *
 
 
 # Register your models here.
